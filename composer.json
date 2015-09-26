@@ -1,8 +1,14 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "rubenpriego/inmobiliariapriego",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "The \"Inmobiliaria Priego\" distribution",
+    "authors": [
+        {
+            "name": "Rubén Priego Sanoguera",
+            "role": "Developer"
+        }
+    ],
     "autoload": {
         "psr-4": { "": "src/" }
     },
