@@ -1,3 +1,7 @@
+inmobiliaria_priego_buscador:
+    resource: "@InmobiliariaPriegoBuscadorBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

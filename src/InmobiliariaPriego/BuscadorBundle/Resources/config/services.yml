@@ -1,0 +1,4 @@
+services:
+#    inmobiliaria_priego_buscador.example:
+#        class: InmobiliariaPriego\BuscadorBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
