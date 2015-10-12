@@ -1,0 +1,4 @@
+services:
+#    inmobiliaria_priego_web.example:
+#        class: InmobiliariaPriego\WebBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

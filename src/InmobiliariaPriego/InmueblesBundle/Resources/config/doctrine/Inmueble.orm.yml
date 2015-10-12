@@ -1,0 +1,52 @@
+InmobiliariaPriego\InmueblesBundle\Entity\Inmueble:
+    type: entity
+    table: inmueble
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        ref:
+            type: integer
+        tipo:
+            type: string
+            length: 255
+        descripcion:
+            type: string
+            length: 1000
+        calle:
+            type: string
+            length: 255
+        codigopostal:
+            type: string
+            length: 50
+        poblacion:
+            type: string
+            length: 255
+        provincia:
+            type: string
+            length: 255
+        pais:
+            type: string
+            length: 255
+        terraza:
+            type: boolean
+        habitaciones:
+            type: integer
+        metros:
+            type: decimal
+            scale: 2
+        ascensor:
+            type: boolean
+        plazasgaraje:
+            type: integer
+        estado:
+            type: string
+            length: 255
+        tipoventa:
+            type: string
+            length: 255
+        userid:
+            type: string
+            length: 255
+            

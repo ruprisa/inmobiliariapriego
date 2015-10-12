@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% include '::header.html.twig' %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <div id="fichaInmueble">
+        </div>
+	<div id="contenido">
+            <div id="mensajeConfirmacion">
+                <p id="textoMensaje"></p>
+            </div>
+            <header>
+                <img id="logo" src="{{ asset('images/app/logo.jpg')}}" alt="Logo Inmobiliaria Priego" height="100px" />
+		<h1 id="titulo">Inmobiliaria Priego</h1>
+		<div id="boxLogin">
+		</div>
+		<div style="clear:both;"></div>
+		<div>
+                    <nav id="menu">
+                        <ul>
+                            <li><a href="#" onClick="cargarBody('php/inicio.php');">Inicio</a></li>
+                            <li><a href="#" onClick="cargarBody('php/buscador.php');">Buscador</a></li>
+                            <li><a href="#" onClick="cargarBody('php/contacto.php');">Contacto</a></li>
+			</ul>
+                    </nav>
+                </div>
+            </header>
+            {% block body %}{% endblock %}
+            <!--<section id="bodySection">
+            </section>-->
+            <footer>
+                <h6>2015 © Inmobiliaria Priego. info@inmobiliariapriego.com</h6>
+            </footer>
+	</div>
+	<div class="fondoOpaco">
+	</div>
+        {% block javascripts %}
+        
+        {% endblock %}
     </body>
 </html>

@@ -1,0 +1,15 @@
+InmobiliariaPriego\UsuariosBundle\Entity\Usuario:
+    type: entity
+    table: usuario
+    id:
+        userid:
+            type: string
+            length: 255
+    fields:
+        password:
+            type: string
+            length: 255
+        username:
+            type: string
+            length: 255
+            

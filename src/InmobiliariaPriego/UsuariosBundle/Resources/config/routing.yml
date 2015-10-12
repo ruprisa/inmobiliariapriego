@@ -1,0 +1,3 @@
+inmobiliaria_priego_usuarios_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: InmobiliariaPriegoUsuariosBundle:Default:index }

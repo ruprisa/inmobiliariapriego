@@ -1,0 +1,4 @@
+services:
+#    inmobiliaria_priego_inmuebles.example:
+#        class: InmobiliariaPriego\InmueblesBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

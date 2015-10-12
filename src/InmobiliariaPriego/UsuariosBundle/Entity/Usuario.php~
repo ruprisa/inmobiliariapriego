@@ -1,0 +1,9 @@
+<?php
+namespace InmobiliariaPriego\UsuariosBundle\Entity;
+
+class Usuario
+{
+    private $userid;
+    protected $password;
+    protected $username;
+}
