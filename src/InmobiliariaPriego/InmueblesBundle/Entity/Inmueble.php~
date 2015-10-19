@@ -29,7 +29,17 @@ class Inmueble
     protected $precio;
     protected $img;
     protected $destacado;
-    
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
     /**
      * Set ref
      *

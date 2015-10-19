@@ -4,39 +4,38 @@
         {% include '::header.html.twig' %}
     </head>
     <body>
-        <div id="fichaInmueble">
-        </div>
-	<div id="contenido">
-            <div id="mensajeConfirmacion">
-                <p id="textoMensaje"></p>
-            </div>
-            <header>
-                <img id="logo" src="{{ asset('images/app/logo.jpg')}}" alt="Logo Inmobiliaria Priego" height="100px" />
-		<h1 id="titulo">Inmobiliaria Priego</h1>
-		<div id="boxLogin">
-		</div>
-		<div style="clear:both;"></div>
-		<div>
-                    <nav id="menu">
-                        <ul>
-                            <li><a href="#" onClick="cargarBody('php/inicio.php');">Inicio</a></li>
-                            <li><a href="#" onClick="cargarBody('php/buscador.php');">Buscador</a></li>
-                            <li><a href="#" onClick="cargarBody('php/contacto.php');">Contacto</a></li>
-			</ul>
-                    </nav>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <button type="button" class="btn btn-navbar" data-toogle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="brand" href="/">Inmobiliaria Priego</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="/">Inicio</a></li>
+                            <li><a href="#">Buscador</a></li>
+                            <li><a href="#">Contacto</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
                 </div>
-            </header>
-            {% block body %}{% endblock %}
-            <!--<section id="bodySection">
-            </section>-->
-            <footer>
-                <h6>2015 © Inmobiliaria Priego. info@inmobiliariapriego.com</h6>
-            </footer>
-	</div>
-	<div class="fondoOpaco">
-	</div>
-        {% block javascripts %}
+            </div>
+        </div>
         
+        <div class="container">
+            {% block body %}{% endblock %}
+            <hr>
+            <footer>
+                <h6>2015 © Inmobiliaria Priego. | Contacto: {{ contact_email }}</h6>
+            </footer>
+        </div> <!-- /container -->
+                
+        {% block javascripts %}
+            {% javascripts '@InmobiliariaPriegoWebBundle/Resources/public/plugins/bootstrap/js/*' output='js/compiled/main.js' %}
+                <script src="{{ asset_url }}" type="text/javascript"></script>
+            {% endjavascripts %}
         {% endblock %}
     </body>
 </html>

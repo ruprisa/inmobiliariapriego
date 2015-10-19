@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<!-- Main hero unit for a primary marketing message or call to action -->
+{% for inmueble in inmuebles %}
+<div class="hero-unit">
+    <h3>{{ inmueble.poblacion }} - {{ inmueble.tipo ~ ' en ' }} {{ inmueble.operacion }}</h3>
+</div>
+
+<div class="row-fluid">
+    <li class="span4">
+        <ul class="thumbnails">
+            <img data-src="holder.js/360x270" alt="360x270" src="{{ asset('images/inmuebles/' ~ inmueble.img) }}" style="width: 360px;">
+        </ul>
+    </li>
+    <li class="span6">
+        <table>
+            <tr>
+                <td>Referencia: </td>
+                <td>{{ inmueble.ref }}</td>
+            </tr>
+            <tr>
+                <td>Zona: </td>
+                <td>{{ inmueble.zona }}</td>
+            </tr>
+            <tr>
+                <td>Superficie: </td>
+                <td>{{ inmueble.superficie ~ ' m2' }}</td>
+            </tr>
+            <tr>
+                <td>Habitaciones dobles: </td>
+                <td>{{ inmueble.habitacionesdobles }}</td>
+            </tr>
+            <tr>
+                <td>Habitaciones individuales: </td>
+                <td>{{ inmueble.habitacionessimples }}</td>
+            </tr>
+            <tr>
+                <td>Ba&ntilde;os: </td>
+                <td>{{ inmueble.banyos }}</td>
+            </tr>
+            <tr>
+                <td>Ascensor: </td>
+                {% if inmueble.ascensor == true %}
+                    <td>Si</td>
+                {% else %}
+                    <td>No</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <td>Terraza: </td>
+                {% if inmueble.terraza == true %}
+                    <td>Si - {{ inmueble.metrosterraza }} m2</td>
+                {% else %}
+                    <td>No  </td>
+                {% endif %}
+            </tr>
+            <tr>
+                <td>Jardín: </td>
+                {% if inmueble.jardin == true %}
+                    <td>Si - {{ inmueble.metrosjardin }} m2</td>
+                {% else %}
+                    <td>No  </td>
+                {% endif %}
+            </tr>
+            <tr>
+                <td>Parking: </td>
+                {% if inmueble.garaje == true %}
+                    <td>Si</td>
+                {% else %}
+                    <td>No</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <td>Precio: </td>
+                <td>{{ inmueble.precio ~ ' €' }}</td>
+            </tr>
+        </table>
+    </li>
+</div>
+
+<div class="row-fluid">
+    <br />
+    <strong>Descripci&oacute;n del Inmueble</strong><br />
+    <p>
+        {{ inmueble.descripcion }}
+    </p>
+</div>
+
+{% endfor %}
+{% endblock %}

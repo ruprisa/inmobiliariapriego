@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<!-- Main hero unit for a primary marketing message or call to action -->
+<div class="hero-unit">
+    <h3>INMUEBLES DESTACADOS</h3>
+</div>
+
+<div class="row-fluid">
+    {% set fila = 1 %}
+    {% for destacado in destacados %}
+        {% if fila <= 3 %}
+            <li class="span4">
+                <a href="{{ '/inmuebles/'~destacado.ref }}" class="thumbnail">
+                    <img data-src="holder.js/300x200" alt="300x200" src="{{ asset('images/inmuebles/' ~ destacado.img) }}" style="width: 360px;">
+                </a>
+                <div class="caption">
+                    <h3>{{ destacado.poblacion }} - {{ destacado.tipo ~ ' en ' }} {{ destacado.operacion }}</h3>
+                    <table>
+                        <tr>
+                            <td>Zona: </td>
+                            <td>{{ destacado.zona }}</td>
+                        </tr>
+                        <tr>
+                            <td>Superficie: </td>
+                            <td>{{ destacado.superficie ~ ' m2' }}</td>
+                        </tr>
+                        <tr>
+                            <td>Precio: </td>
+                            <td>{{ destacado.precio ~ ' €' }}</td>
+                        </tr>
+                    </table>
+                    <br />
+                </div>
+            </li>
+        {% else %}
+            </div>
+            <div class="row-fluid">
+            {% set fila = 0 %}
+        {% endif %}
+    {% set fila = fila + 1 %}
+    {% endfor %}
+</div>
+{% endblock %}

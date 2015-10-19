@@ -1,3 +1,7 @@
 inmobiliaria_priego_inmuebles_homepage:
-    path:     /hello/{name}
+    path:     /
     defaults: { _controller: InmobiliariaPriegoInmueblesBundle:Default:index }
+
+inmobiliaria_priego_inmuebles_sheet:
+    path:     /inmuebles/{ref}
+    defaults: { _controller: InmobiliariaPriegoInmueblesBundle:Default:sheet }
