@@ -14,12 +14,15 @@ InmobiliariaPriego\InmueblesBundle\Entity\Inmueble:
         zona:
             type: string
             length: 255
+            nullable: true
         planta:
             type: string
             length: 255
+            nullable: true
         calle:
             type: string
             length: 255
+            nullable: true
         poblacion:
             type: string
             length: 255
@@ -31,43 +34,58 @@ InmobiliariaPriego\InmueblesBundle\Entity\Inmueble:
             length: 255
         terraza:
             type: boolean
+            nullable: true
         metrosterraza:
             type: decimal
             scale: 2
+            nullable: true
         jardin:
             type: boolean
+            nullable: true
         metrosjardin:
             type: decimal
             scale: 2
+            nullable: true
         habitacionesdobles:
             type: integer
+            nullable: true
         habitacionessimples:
             type: integer
+            nullable: true
         banyos:
             type: integer
+            nullable: true
         superficie:
             type: decimal
             scale: 2
+            nullable: true
         ascensor:
             type: boolean
+            nullable: true
         garaje:
             type: boolean
+            nullable: true
         trastero:
             type: boolean
+            nullable: true
         metrostrastero:
             type: decimal
             scale: 2
+            nullable: true
         obranueva:
             type: boolean
+            nullable: true
         operacion:
             type: string
             length: 255
+            nullable: true
         precio:
             type: decimal
             scale: 2
         img:
             type: string
             length: 255
+            nullable: true
         destacado:
             type: boolean
-            
+            nullable: true

@@ -12,12 +12,21 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="brand" href="/">Inmobiliaria Priego</a>
+                    <a class="brand" href="{{ path('inmobiliaria_priego_inmuebles_homepage') }}">Inmobiliaria Priego</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li class="active"><a href="/">Inicio</a></li>
+                            <li class="active"><a href="{{ path('inmobiliaria_priego_inmuebles_homepage') }}">Inicio</a></li>
                             <li><a href="#">Buscador</a></li>
                             <li><a href="#">Contacto</a></li>
+                            <li><a href="{{ path('inmobiliaria_priego_inmuebles_create') }}">Nuevo Inmueble</a></li>
+                            <li><a href="{{ path('inmobiliaria_priego_usuarios_create') }}">Nuevo Usuario</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administraci&oacute;n<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ path('inmobiliaria_priego_inmuebles_create') }}">Nuevo Inmueble</a></li>
+                                    <li><a href="{{ path('inmobiliaria_priego_usuarios_create') }}">Nuevo Usuario</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>

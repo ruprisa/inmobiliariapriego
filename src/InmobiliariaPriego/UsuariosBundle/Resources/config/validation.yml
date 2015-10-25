@@ -1,0 +1,14 @@
+InmobiliariaPriego\UsuariosBundle\Entity\Usuario:
+    properties:
+        username:
+            - NotBlank: ~
+            
+        password:
+            - NotBlank: ~
+            
+        username:
+            - NotBlank: ~
+            
+    getters:
+        valid:
+            - "True": { message: "Mensaje desde validador" }

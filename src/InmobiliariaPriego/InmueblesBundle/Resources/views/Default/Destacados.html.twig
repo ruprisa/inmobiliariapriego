@@ -11,7 +11,8 @@
     {% for destacado in destacados %}
         {% if fila <= 3 %}
             <li class="span4">
-                <a href="{{ '/inmuebles/'~destacado.ref }}" class="thumbnail">
+                
+                <a href="{{ path('inmobiliaria_priego_inmuebles_sheet', { 'ref': destacado.ref }) }}" class="thumbnail">
                     <img data-src="holder.js/300x200" alt="300x200" src="{{ asset('images/inmuebles/' ~ destacado.img) }}" style="width: 360px;">
                 </a>
                 <div class="caption">

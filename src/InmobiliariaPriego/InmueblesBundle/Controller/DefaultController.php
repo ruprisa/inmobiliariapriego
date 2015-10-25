@@ -34,4 +34,20 @@ class DefaultController extends Controller
         ));
     }
     
+    public function createAction()
+    {
+        return $this->render('InmobiliariaPriegoInmueblesBundle:Inmueble:create.html.twig');
+    }
+    
+    public function pruebaAction()
+    {   
+        $repository = $this->getDoctrine()
+                ->getRepository('InmobiliariaPriegoInmueblesBundle:Inmueble');
+        $destacados = $repository->findByDestacado(true);
+        
+        return $this->render('InmobiliariaPriegoInmueblesBundle:Default:Destacados.html.twig', array(
+            'destacados' => $destacados
+        ));
+    }
+    
 }

@@ -5,3 +5,7 @@ inmobiliaria_priego_inmuebles_homepage:
 inmobiliaria_priego_inmuebles_sheet:
     path:     /inmuebles/{ref}
     defaults: { _controller: InmobiliariaPriegoInmueblesBundle:Default:sheet }
+    
+inmobiliaria_priego_inmuebles_create:
+    pattern: /inmueble/create
+    defaults: { _controller: InmobiliariaPriegoInmueblesBundle:Inmueble:create }
