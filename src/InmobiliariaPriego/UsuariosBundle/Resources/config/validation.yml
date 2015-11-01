@@ -1,6 +1,6 @@
 InmobiliariaPriego\UsuariosBundle\Entity\Usuario:
     properties:
-        username:
+        userid:
             - NotBlank: ~
             
         password:

@@ -1,3 +1,7 @@
+inmobiliaria_priego_usuarios_usuario:
+    resource: "@InmobiliariaPriegoUsuariosBundle/Resources/config/routing/usuario.yml"
+    prefix:   /usuario
+
 inmobiliaria_priego_usuarios_create:
     path:     /usuarios/create
     defaults: { _controller: InmobiliariaPriegoUsuariosBundle:Usuario:create }

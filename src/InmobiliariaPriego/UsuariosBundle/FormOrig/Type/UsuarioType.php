@@ -6,11 +6,32 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 class UsuarioType extends AbstractType
 {
+    /*
+    private $userData;
+    
+    public function __construct($data) {
+        $this->userData = $data;
+    }
+*/
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        /*if(is_array($this->userData))
+        {
+            $userid = 'es un array';
+            echo "<PRE>";
+            echo $this->userData;
+            echo "</PRE>";
+        }
+        else
+        {
+            $userid = 'no es un array else';
+        }*/
+        
         $builder
-                ->add("userid", "text", 
+                ->add("userid", "entity", 
                         array(
+                            'class' => 'InmobiliariaPriegoUsuariosBundle:Usuario',
+                            'property' => 'userid',
                             'label' => 'Id Usuario'
                         ))
                 ->add("password", "password",

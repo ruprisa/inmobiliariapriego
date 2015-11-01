@@ -11,6 +11,9 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {   
+        /*
+         * Mostrar inmuebles destacados al inicio sin utilizar servicios
+         * 
         $repository = $this->getDoctrine()
                 ->getRepository('InmobiliariaPriegoInmueblesBundle:Inmueble');
         $destacados = $repository->findByDestacado(true);
@@ -18,8 +21,24 @@ class DefaultController extends Controller
         return $this->render('InmobiliariaPriegoInmueblesBundle:Default:Destacados.html.twig', array(
             'destacados' => $destacados
         ));
+         * 
+         */
+        
+        /*
+         * Mostrar inmuebles destacados utilizando un servicio
+         */
+        return $this->render('InmobiliariaPriegoInmueblesBundle:Default:Destacados.html.twig', $this->inmueblesDestacadosAction());
     }
     
+    /*
+     * Obtención de los inmuebles destacados a través de un servicio
+     */
+        public function inmueblesDestacadosAction()
+        {
+            return array('destacados' => $this->get('inmuebles.destacados')->findFromDestacado());
+        }
+
+
     /*
      * Obtención del inmueble solicitado
      */

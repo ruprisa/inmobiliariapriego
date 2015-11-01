@@ -2,3 +2,7 @@ services:
 #    inmobiliaria_priego_inmuebles.example:
 #        class: InmobiliariaPriego\InmueblesBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]
+
+    inmuebles.destacados:
+        class: InmobiliariaPriego\InmueblesBundle\Model\InmueblesDestacados
+        arguments: ["@doctrine.orm.entity_manager"]

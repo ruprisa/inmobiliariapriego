@@ -78,4 +78,10 @@ class Usuario
     {
         return $this->username;
     }
+    
+    public function isValid()
+    {
+        return true;
+    }
+    
 }
