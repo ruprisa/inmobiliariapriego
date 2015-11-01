@@ -1,3 +1,7 @@
+inmobiliaria_priego_inmuebles_inmueble:
+    resource: "@InmobiliariaPriegoInmueblesBundle/Resources/config/routing/inmueble.yml"
+    prefix:   /inmueble
+
 inmobiliaria_priego_inmuebles_homepage:
     path:     /
     defaults: { _controller: InmobiliariaPriegoInmueblesBundle:Default:index }

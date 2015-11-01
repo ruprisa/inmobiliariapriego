@@ -653,4 +653,9 @@ class Inmueble
     {
         return $this->destacado;
     }
+    
+    public function isValid()
+    {
+        return true;
+    }
 }

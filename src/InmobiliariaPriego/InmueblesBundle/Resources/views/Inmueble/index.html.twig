@@ -1,0 +1,46 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Inmuebles{% endblock %}
+
+{% block body -%}
+    <div class="hero-unit">
+        <h3>INMUEBLES</h3>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Img</th>
+                <th>Ref</th>
+                <th>Tipo</th>
+                <th>Zona</th>
+                <th>Calle</th>
+                <th>Poblacion</th>
+                <th>Operacion</th>
+                <th>Precio</th>
+                <th><a href="{{ path('inmueble_new') }}" class="btn btn-info btn-small" role="button">Nuevo</a></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>
+                    <img data-src="holder.js/300x200" alt="{{ entity.img }}" src="{{ asset('images/inmuebles/' ~ entity.img) }}" style="width: 100px;">
+                </td>
+                <td>{{ entity.ref }}</td>
+                <td>{{ entity.tipo }}</td>
+                <td>{{ entity.zona }}</td>
+                <td>{{ entity.calle }}</td>
+                <td>{{ entity.poblacion }}</td>
+                <td>{{ entity.operacion }}</td>
+                <td>{{ entity.precio }}</td>
+                <td>
+                    <a href="{{ path('inmueble_show', { 'id': entity.ref }) }}" class="btn btn-info btn-small" role="button">Ver</a>
+                    <a href="{{ path('inmueble_edit', { 'id': entity.ref }) }}" class="btn btn-info btn-small" role="button">Editar</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% endblock %}

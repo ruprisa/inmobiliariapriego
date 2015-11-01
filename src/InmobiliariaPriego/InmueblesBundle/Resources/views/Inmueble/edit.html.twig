@@ -1,0 +1,129 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <div class="hero-unit">
+        <h3>EDICI&Oacute;N INMUEBLE REF. {{ edit_form.vars.value.ref }}</h3>
+    </div>
+
+    {{ form_start(edit_form) }}
+    {{ form_errors(edit_form) }}
+
+    <div class="row-fluid">
+        <div class="span4">
+            {{ form_row(edit_form.ref, {'attr': {'readonly':'true'}}) }}
+        </div>
+        <div class="span4">
+            {{ form_row(edit_form.tipo) }}
+        </div>
+        <div class="span4">
+            {{ form_row(edit_form.descripcion) }}
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span4">
+            {{ form_row(edit_form.zona) }}
+        </div>
+        <div class="span4">
+            {{ form_row(edit_form.planta) }}
+        </div>
+        <div class="span4">
+            {{ form_row(edit_form.calle) }}
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span4">
+            {{ form_row(edit_form.poblacion) }}
+        </div>
+        <div class="span4">
+            {{ form_row(edit_form.provincia) }}
+        </div>
+        <div class="span4">
+            {{ form_row(edit_form.pais) }}
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span4">
+            {{ form_row(edit_form.terraza) }}
+        </div>
+        <div class="span4">
+            {{ form_row(edit_form.metrosterraza) }}
+        </div>
+        <div class="span4">
+            {{ form_row(edit_form.ascensor) }}
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span4">
+            {{ form_row(edit_form.jardin) }}
+        </div>
+        <div class="span4">
+            {{ form_row(edit_form.metrosjardin) }}
+        </div>
+        <div class="span4">
+            {{ form_row(edit_form.garaje) }}
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span4">
+            {{ form_row(edit_form.trastero) }}
+        </div>
+        <div class="span4">
+            {{ form_row(edit_form.metrostrastero) }}
+        </div>
+        <div class="span4">
+            {{ form_row(edit_form.obranueva) }}
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span4">
+            {{ form_row(edit_form.habitacionesdobles) }}
+        </div>
+        <div class="span4">
+            {{ form_row(edit_form.habitacionessimples) }}
+        </div>
+        <div class="span4">
+            {{ form_row(edit_form.banyos) }}
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span4">
+            {{ form_row(edit_form.superficie) }}
+        </div>
+        <div class="span4">
+            {{ form_row(edit_form.operacion) }}
+        </div>
+        <div class="span4">
+            {{ form_row(edit_form.precio) }}
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span4">
+            {{ form_row(edit_form.img) }}
+        </div>
+        <div class="span4">
+            {{ form_row(edit_form.destacado) }}
+        </div>
+        <div class="span4">
+
+        </div>
+    </div>
+    
+    <div class="row-fluid">
+        <div class="well span12 row">
+            <div class="span8">
+                <a href="{{ path('inmueble') }}" class="btn btn-info btn-small" role="button">Volver a la lista</a>
+            </div>
+            <div class="span2">
+                <!-- Si utilizo el formulario de eliminación se proeuce el error 405 Method Not Allowed -->
+                {# form(delete_form) #}
+                <!-- De esta forma también se queja de GET -->
+                <a href="{{ path('inmueble_delete', { 'id': edit_form.vars.value.ref }) }}" class="btn btn-info btn-small" role="button">Eliminar</a>
+            </div>
+            <div class="span2">
+                {{ form_row(edit_form.submit) }}
+            </div>
+        </div>
+    </div>
+{{ form_rest(edit_form) }}
+{% endblock %}

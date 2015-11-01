@@ -1,0 +1,30 @@
+inmueble:
+    path:     /
+    defaults: { _controller: "InmobiliariaPriegoInmueblesBundle:Inmueble:index" }
+
+inmueble_show:
+    path:     /{id}/show
+    defaults: { _controller: "InmobiliariaPriegoInmueblesBundle:Inmueble:show" }
+
+inmueble_new:
+    path:     /new
+    defaults: { _controller: "InmobiliariaPriegoInmueblesBundle:Inmueble:new" }
+
+inmueble_create:
+    path:     /create
+    defaults: { _controller: "InmobiliariaPriegoInmueblesBundle:Inmueble:create" }
+    methods:  POST
+
+inmueble_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "InmobiliariaPriegoInmueblesBundle:Inmueble:edit" }
+
+inmueble_update:
+    path:     /{id}/update
+    defaults: { _controller: "InmobiliariaPriegoInmueblesBundle:Inmueble:update" }
+    methods:  [POST, PUT]
+
+inmueble_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "InmobiliariaPriegoInmueblesBundle:Inmueble:delete" }
+    methods:  [POST, DELETE]

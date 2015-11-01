@@ -1,34 +1,233 @@
 <?php
+
 namespace InmobiliariaPriego\InmueblesBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use InmobiliariaPriego\InmueblesBundle\Entity\Inmueble;
-use InmobiliariaPriego\InmueblesBundle\Form\Type\InmuebleType;
+use InmobiliariaPriego\InmueblesBundle\Form\InmuebleType;
 
+/**
+ * Inmueble controller.
+ *
+ */
 class InmuebleController extends Controller
 {
-    /*
-     * @Template()
+
+    /**
+     * Lists all Inmueble entities.
+     *
+     */
+    public function indexAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('InmobiliariaPriegoInmueblesBundle:Inmueble')->findAll();
+
+        return $this->render('InmobiliariaPriegoInmueblesBundle:Inmueble:index.html.twig', array(
+            'entities' => $entities,
+        ));
+    }
+    /**
+     * Creates a new Inmueble entity.
+     *
      */
     public function createAction(Request $request)
     {
-        $inmueble = new Inmueble;
-        
-        $form = $this->createForm(new InmuebleType(), $inmueble);
+        $entity = new Inmueble();
+        $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
-        
-        if($form->isValid())
-        {
+
+        if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($inmueble);
+            $em->persist($entity);
             $em->flush();
-            
-            return $this->redirect($this->generateUrl('inmobiliaria_priego_inmuebles_sheet', array('ref' => $inmueble->getRef())));
+
+            return $this->redirect($this->generateUrl('inmueble_show', array('id' => $entity->getRef())));
         }
-    
-        return $this->render('InmobiliariaPriegoInmueblesBundle:Inmueble:createInmueble.html.twig', array('form' => $form->createView()));
+
+        return $this->render('InmobiliariaPriegoInmueblesBundle:Inmueble:new.html.twig', array(
+            'entity' => $entity,
+            'form'   => $form->createView(),
+        ));
+    }
+
+    /**
+     * Creates a form to create a Inmueble entity.
+     *
+     * @param Inmueble $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createCreateForm(Inmueble $entity)
+    {
+        $form = $this->createForm(new InmuebleType(), $entity, array(
+            'action' => $this->generateUrl('inmueble_create'),
+            'method' => 'POST',
+        ));
+
+        $form->add('submit', 'submit', array(
+            'label' => 'Crear',
+            'attr' => array('class' => 'btn btn-info btn-small')
+            ));
+
+        return $form;
+    }
+
+    /**
+     * Displays a form to create a new Inmueble entity.
+     *
+     */
+    public function newAction()
+    {
+        $entity = new Inmueble();
+        $form   = $this->createCreateForm($entity);
+
+        return $this->render('InmobiliariaPriegoInmueblesBundle:Inmueble:new.html.twig', array(
+            'entity' => $entity,
+            'form'   => $form->createView(),
+        ));
+    }
+
+    /**
+     * Finds and displays a Inmueble entity.
+     *
+     */
+    public function showAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('InmobiliariaPriegoInmueblesBundle:Inmueble')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Inmueble entity.');
+        }
+
+        $deleteForm = $this->createDeleteForm($id);
+
+        return $this->render('InmobiliariaPriegoInmueblesBundle:Inmueble:show.html.twig', array(
+            'entity'      => $entity,
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+    /**
+     * Displays a form to edit an existing Inmueble entity.
+     *
+     */
+    public function editAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('InmobiliariaPriegoInmueblesBundle:Inmueble')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Inmueble entity.');
+        }
+
+        $editForm = $this->createEditForm($entity);
+        $deleteForm = $this->createDeleteForm($id);
+
+        return $this->render('InmobiliariaPriegoInmueblesBundle:Inmueble:edit.html.twig', array(
+            'entity'      => $entity,
+            'edit_form'   => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+    /**
+    * Creates a form to edit a Inmueble entity.
+    *
+    * @param Inmueble $entity The entity
+    *
+    * @return \Symfony\Component\Form\Form The form
+    */
+    private function createEditForm(Inmueble $entity)
+    {
+        $form = $this->createForm(new InmuebleType(), $entity, array(
+            'action' => $this->generateUrl('inmueble_update', array('id' => $entity->getRef())),
+            'method' => 'PUT',
+        ));
+
+        $form->add('submit', 'submit', array(
+            'label' => 'Actualizar',
+            'attr' => array('class' => 'btn btn-info btn-small')
+            ));
+
+        return $form;
+    }
+    /**
+     * Edits an existing Inmueble entity.
+     *
+     */
+    public function updateAction(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('InmobiliariaPriegoInmueblesBundle:Inmueble')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Inmueble entity.');
+        }
+
+        //$deleteForm = $this->createDeleteForm($id);
+        $editForm = $this->createEditForm($entity);
+        $editForm->handleRequest($request);
+
+        if ($editForm->isValid()) {
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('inmueble_edit', array('id' => $id)));
+        }
+
+        return $this->render('InmobiliariaPriegoInmueblesBundle:Inmueble:edit.html.twig', array(
+            'entity'      => $entity,
+            'edit_form'   => $editForm->createView(),
+            //'delete_form' => $deleteForm->createView(),
+        ));
+    }
+    /**
+     * Deletes a Inmueble entity.
+     *
+     */
+    public function deleteAction(Request $request, $id)
+    {
+        $form = $this->createDeleteForm($id);
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $entity = $em->getRepository('InmobiliariaPriegoInmueblesBundle:Inmueble')->find($id);
+
+            if (!$entity) {
+                throw $this->createNotFoundException('Unable to find Inmueble entity.');
+            }
+
+            $em->remove($entity);
+            $em->flush();
+        }
+
+        return $this->redirect($this->generateUrl('inmueble'));
+    }
+
+    /**
+     * Creates a form to delete a Inmueble entity by id.
+     *
+     * @param mixed $id The entity id
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createDeleteForm($id)
+    {
+        return $this->createFormBuilder()
+            ->setAction($this->generateUrl('inmueble_delete', array('id' => $id)))
+            ->setMethod('DELETE')
+            ->add('submit', 'submit', array(
+                'label' => 'Eliminar',
+                'attr' => array('class' => 'btn btn-info btn-small')
+                ))
+            ->getForm()
+        ;
     }
 }

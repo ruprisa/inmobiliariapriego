@@ -1,11 +1,17 @@
 <?php
-namespace InmobiliariaPriego\InmueblesBundle\Form\Type;
+
+namespace InmobiliariaPriego\InmueblesBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class InmuebleType extends AbstractType
 {
+    /**
+     * @param FormBuilderInterface $builder
+     * @param array $options
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -13,8 +19,7 @@ class InmuebleType extends AbstractType
                 ->add("tipo", "text")
                 ->add("descripcion", "text",
                         array(
-                            'label' => 'Descripción',
-                            'data' => 'algo'
+                            'label' => 'Descripción'
                         ))
                 ->add("zona", "text", array('required' => false))
                 ->add("planta", "text", array('required' => false))
@@ -85,11 +90,24 @@ class InmuebleType extends AbstractType
                             'label' => 'Imagen'
                             ))
                 ->add("destacado", "checkbox", array('required' => false))
-                ->add("guardar", "submit");
+        ;
     }
     
-    public function getName() 
+    /**
+     * @param OptionsResolverInterface $resolver
+     */
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        return 'inmueble';
+        $resolver->setDefaults(array(
+            'data_class' => 'InmobiliariaPriego\InmueblesBundle\Entity\Inmueble'
+        ));
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return 'inmobiliariapriego_inmueblesbundle_inmueble';
     }
 }
