@@ -80,3 +80,11 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+#Configuración para Monolog añadida por Rubén Priego 02/11/2015
+monolog:
+    handlers:
+        main:
+            type: stream
+            action_level: %kernel.logs_dir%/%kernel.environment%.log
+            level: debug

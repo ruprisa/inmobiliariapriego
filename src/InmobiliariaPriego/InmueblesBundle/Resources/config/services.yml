@@ -6,3 +6,12 @@ services:
     inmuebles.destacados:
         class: InmobiliariaPriego\InmueblesBundle\Model\InmueblesDestacados
         arguments: ["@doctrine.orm.entity_manager"]
+        
+    inmuebles.update:
+        class: InmobiliariaPriego\InmueblesBundle\Model\InmueblesUpdate
+        arguments: ["@doctrine.orm.entity_manager"]
+        
+    inmuebles.inmuebles_listener:
+        class: InmobiliariaPriego\InmueblesBundle\Event\InmueblesListener
+        tags: 
+            - { name: kernel.event_listener, event: inmueble.update, method: onInmuebleUpdate }

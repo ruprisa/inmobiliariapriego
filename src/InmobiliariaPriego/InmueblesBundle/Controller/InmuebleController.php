@@ -4,9 +4,10 @@ namespace InmobiliariaPriego\InmueblesBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use InmobiliariaPriego\InmueblesBundle\Entity\Inmueble;
 use InmobiliariaPriego\InmueblesBundle\Form\InmuebleType;
+use InmobiliariaPriego\InmueblesBundle\Event\InmuebleEvent;
+use Symfony\Component\EventDispatcher\Event;
 
 /**
  * Inmueble controller.
@@ -176,7 +177,18 @@ class InmuebleController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
-            $em->flush();
+            /*
+             * El flush se ha cambiado por una llamada al servicio inmuebles.update
+             * donde se va a realizar ahora la acción de actualización de la entidad inmueble
+             */
+            //$em->flush();
+            
+            $this->get('inmuebles.update')->InmuebleUpdate($entity);
+            
+            /*
+             * Disparar el evento
+             */
+            //$this->get('event_dispatcher')->dispatch('inmueble_create', new InmuebleEvent($entity));
 
             return $this->redirect($this->generateUrl('inmueble_edit', array('id' => $id)));
         }
