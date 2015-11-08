@@ -12,4 +12,12 @@ InmobiliariaPriego\UsuariosBundle\Entity\Usuario:
         username:
             type: string
             length: 255
+        salt:
+            type: string
+            length: 64
+        roles:
+            type: string
+            length: 255
+        
+    lifecycleCallbacks: { }
             

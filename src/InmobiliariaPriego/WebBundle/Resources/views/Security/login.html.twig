@@ -1,0 +1,50 @@
+{# Formulario de registro de usuarios #}
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+
+{% if error %}
+
+    <div>{{ error.message }}</div>
+    
+{% endif %}
+    
+    <div class="hero-unit">
+        <h3>INICIAR SESI&Oacute;N</h3>
+    </div>
+    
+    <form action="{{ path('login_check') }}" method="post">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="control-group">
+                    <label class="control-label" for="username">Username:</label>
+                    <div class="controls">
+                        <input type="text" id="username" name="_username" value="{{ last_username }}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="control-group">
+                    <label class="control-label" for="password">Password:</label>
+                    <div class="controls">
+                        <input type="password" id="password" name="_password" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit">login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+{% endblock %}

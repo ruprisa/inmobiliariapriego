@@ -17,3 +17,13 @@ inmobiliaria_priego_buscador:
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+    
+login:
+    path: /login
+    defaults: { _controller: InmobiliariaPriegoWebBundle:Security:login }
+    
+login_check:
+    path: /login_check
+    
+logout:
+    path: /logout

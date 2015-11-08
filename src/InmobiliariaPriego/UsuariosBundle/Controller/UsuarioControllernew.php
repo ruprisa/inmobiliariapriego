@@ -41,25 +41,10 @@ class UsuarioController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            /*
-             * Codifiación de la contraseña
-             */
-            $encoder = $this->container->get('security.password_encoder');
-            $encodered = $encoder->encodePassword($entity, $entity->getPassword());
-            $entity->setPassword($encodered);
-            
-            /*
-             * Registro de usuarios, creación por defecto con rol user
-             */
-            if(!$this->get('security.authorization_checker')->isGranted('ROLE_ADMIN'))
-            {
-                $entity->setSalt('sha1');
-                $entity->setRoles('ROLE_USER');
-            }
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('usuario_show', array('id' => $entity->getUserid())));
+            return $this->redirect($this->generateUrl('usuario_show', array('id' => $entity->getId())));
         }
 
         return $this->render('InmobiliariaPriegoUsuariosBundle:Usuario:new.html.twig', array(
@@ -82,10 +67,7 @@ class UsuarioController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array(
-            'label' => 'Crear Usuario',
-            'attr' => array('class' => 'btn btn-info btn-small')
-            ));
+        $form->add('submit', 'submit', array('label' => 'Create'));
 
         return $form;
     }
@@ -161,14 +143,11 @@ class UsuarioController extends Controller
     private function createEditForm(Usuario $entity)
     {
         $form = $this->createForm(new UsuarioType(), $entity, array(
-            'action' => $this->generateUrl('usuario_update', array('id' => $entity->getUserid())),
+            'action' => $this->generateUrl('usuario_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array(
-            'label' => 'Actualizar',
-            'attr' => array('class' => 'btn btn-info btn-small')
-            ));
+        $form->add('submit', 'submit', array('label' => 'Update'));
 
         return $form;
     }
@@ -189,16 +168,8 @@ class UsuarioController extends Controller
         $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
-        
-        /*
-        * Codifiación de la contraseña
-        */
-        $encoder = $this->container->get('security.password_encoder');
-        $encodered = $encoder->encodePassword($entity, $entity->getPassword());
-        $entity->setPassword($encodered);
 
         if ($editForm->isValid()) {
-            $entity->setRoles('ROLE_USER');
             $em->flush();
 
             return $this->redirect($this->generateUrl('usuario_edit', array('id' => $id)));
@@ -246,10 +217,7 @@ class UsuarioController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('usuario_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array(
-                'label' => 'Eliminar',
-                'attr' => array('class' => 'btn btn-info btn-small')
-                ))
+            ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
     }

@@ -1,8 +1,6 @@
 {% extends '::base.html.twig' %}
 
-{% block title %}Usuarios{% endblock %}
-
-{% block body %}
+{% block body -%}
     <div class="hero-unit">
         <h3>USUARIOS</h3>
     </div>
@@ -10,21 +8,22 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>ID Usuario</th>
-                <th>Contrase&ntilde;a</th>
-                <th>Nombre</th>
-                <th>Acciones</th>
+                <th>Userid</th>
+                <!--<th>Password</th>-->
+                <th>Username</th>
+                <!--<th>Salt</th>-->
+                <th>Roles</th>
+                <th><a href="{{ path('usuario_new') }}" class="btn btn-info btn-small" role="button">Nuevo</a></th>
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
             <tr>
-                <!--<td><a href="{{ path('usuario_show', { 'id': entity.userid }) }}">{{ entity.userid }}</a></td>-->
                 <td>{{ entity.userid }}</td>
-                <td>{{ entity.password }}</td>
                 <td>{{ entity.username }}</td>
+                <td>{{ entity.roles|join(' ') }}</td>
                 <td>
-                    <!--<a href="{{ path('usuario_show', { 'id': entity.userid }) }}" class="btn btn-info btn-small" role="button">Mostrar</a>-->
+                    <a href="{{ path('usuario_show', { 'id': entity.userid }) }}" class="btn btn-info btn-small" role="button">Ver</a>
                     <a href="{{ path('usuario_edit', { 'id': entity.userid }) }}" class="btn btn-info btn-small" role="button">Editar</a>
                 </td>
             </tr>
@@ -32,10 +31,4 @@
         </tbody>
     </table>
 
-    <p>
-        <a href="{{ path('usuario_new') }}" class="btn btn-info btn-small" role="button">
-            Nuevo Usuario
-        </a>
-    </p>
-        
     {% endblock %}
