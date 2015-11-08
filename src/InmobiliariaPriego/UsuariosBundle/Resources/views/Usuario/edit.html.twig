@@ -9,14 +9,17 @@
     {{ form_errors(edit_form) }}
 
     <div class="row-fluid">
-        <div class="span4">
+        <div class="span3">
             {{ form_row(edit_form.userid, {'attr': {'readonly':'true'}}) }}
         </div>
-        <div class="span4">
+        <div class="span3">
             {{ form_row(edit_form.password) }}
         </div>
-        <div class="span4">
+        <div class="span3">
             {{ form_row(edit_form.username) }}
+        </div>
+        <div class="span3">
+            {{ form_row(edit_form.active) }}
         </div>
     </div>
 

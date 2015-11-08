@@ -18,6 +18,9 @@ InmobiliariaPriego\UsuariosBundle\Entity\Usuario:
         roles:
             type: string
             length: 255
+        active:
+            type: boolean
+            nullable: true
         
     lifecycleCallbacks: { }
             

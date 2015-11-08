@@ -56,6 +56,7 @@ class UsuarioController extends Controller
                 $entity->setSalt('sha1');
                 $entity->setRoles('ROLE_USER');
             }
+            $entity->setActive(true);
             $em->persist($entity);
             $em->flush();
 
@@ -81,7 +82,7 @@ class UsuarioController extends Controller
             'action' => $this->generateUrl('usuario_create'),
             'method' => 'POST',
         ));
-
+        
         $form->add('submit', 'submit', array(
             'label' => 'Crear Usuario',
             'attr' => array('class' => 'btn btn-info btn-small')
@@ -164,7 +165,7 @@ class UsuarioController extends Controller
             'action' => $this->generateUrl('usuario_update', array('id' => $entity->getUserid())),
             'method' => 'PUT',
         ));
-
+        
         $form->add('submit', 'submit', array(
             'label' => 'Actualizar',
             'attr' => array('class' => 'btn btn-info btn-small')
@@ -199,6 +200,7 @@ class UsuarioController extends Controller
 
         if ($editForm->isValid()) {
             $entity->setRoles('ROLE_USER');
+            //$entity->setActive(true);
             $em->flush();
 
             return $this->redirect($this->generateUrl('usuario_edit', array('id' => $id)));

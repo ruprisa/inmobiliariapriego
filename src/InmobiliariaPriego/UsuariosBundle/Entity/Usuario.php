@@ -15,7 +15,10 @@ class Usuario implements UserInterface
     protected $username;
     protected $salt;
     protected $roles;
-
+    /**
+     * @var boolean
+     */
+    private $active;
 
     /**
      * Set userid
@@ -148,5 +151,31 @@ class Usuario implements UserInterface
     
     public function eraseCredentials() 
     {
+    }
+    
+
+
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     *
+     * @return Usuario
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
     }
 }

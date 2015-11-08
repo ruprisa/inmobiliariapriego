@@ -18,7 +18,8 @@ class UsuarioType extends AbstractType
             ->add('userid','text',array('label' => 'Id Usuario'))
             ->add('password','text',array('label' => 'Contraseña'))
             ->add('username','text',array('label' => 'Nombre'))
-        ;
+            ->add('active', 'checkbox', array('label' => 'Activo', 'data' => true, 'required' => false))
+            ;
     }
     
     /**

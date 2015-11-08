@@ -1,11 +1,24 @@
 <?php
 namespace InmobiliariaPriego\UsuariosBundle\Entity;
 
-class Usuario
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
+
+/**
+ * Usuario
+ */
+
+class Usuario implements UserInterface
 {
     private $userid;
     protected $password;
     protected $username;
+    protected $salt;
+    protected $roles;
+    /**
+     * @var boolean
+     */
+    private $active;
 
     /**
      * Set userid
@@ -84,4 +97,85 @@ class Usuario
         return true;
     }
     
+    
+
+    /**
+     * Set salt
+     *
+     * @param string $salt
+     *
+     * @return Usuario
+     */
+    public function setSalt($salt)
+    {
+        $this->salt = $salt;
+
+        return $this;
+    }
+
+    /**
+     * Get salt
+     *
+     * @return string
+     */
+    public function getSalt()
+    {
+        return $this->salt;
+    }
+
+    /**
+     * Set roles
+     *
+     * @param string $roles
+     *
+     * @return Usuario
+     */
+    public function setRoles($roles)
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * Get roles
+     *
+     * @return string
+     */
+    public function getRoles()
+    {
+        return explode(' ', $this->roles);
+        //return array('ROLE_ADMIN');
+        //return 'ROLE_ADMIN';
+    }
+    
+    public function eraseCredentials() 
+    {
+    }
+    
+
+
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     *
+     * @return Usuario
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
 }
