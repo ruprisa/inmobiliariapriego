@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+            <body>
+            <trans-unit id="1">
+                <source>inmu.dest</source>
+                <target>Inmuebles Destacados</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>inmu.list</source>
+                <target>Inmuebles</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>inmu.sheet</source>
+                <target>INMUEBLE REF. %inmudesc%</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>inmu.new</source>
+                <target>Nuevo Inmueble</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>Referencia</source>
+                <target>Referencia</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>inmu.tipo</source>
+                <target>Tipo</target>
+            </trans-unit>            
+        </body>
+    </file>
+</xliff>

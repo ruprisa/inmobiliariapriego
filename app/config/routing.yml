@@ -1,29 +1,29 @@
 inmobiliaria_priego_usuarios:
     resource: "@InmobiliariaPriegoUsuariosBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}
 
 inmobiliaria_priego_inmuebles:
     resource: "@InmobiliariaPriegoInmueblesBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}
 
 inmobiliaria_priego_web:
     resource: "@InmobiliariaPriegoWebBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}
 
 inmobiliaria_priego_buscador:
     resource: "@InmobiliariaPriegoBuscadorBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}
 
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
     
 login:
-    path: /login
+    path: /{_locale}/login
     defaults: { _controller: InmobiliariaPriegoWebBundle:Security:login }
     
 login_check:
-    path: /login_check
+    path: /{_locale}/login_check
     
 logout:
     path: /logout

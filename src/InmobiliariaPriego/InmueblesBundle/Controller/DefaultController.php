@@ -3,6 +3,7 @@
 namespace InmobiliariaPriego\InmueblesBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
@@ -21,6 +22,20 @@ class DefaultController extends Controller
         return $this->render('InmobiliariaPriegoInmueblesBundle:Default:Destacados.html.twig', array(
             'destacados' => $destacados
         ));
+         * 
+         */
+        
+        /*
+         * Prueba de traductor
+         */
+        /*
+        $name = "Rubén Priego Sanoguera";
+        $t = $this->get('translator')->trans(
+                'Bienvenido %name%',
+                array('%name%' => $name)
+        );
+
+        return new Response($t);
          * 
          */
         

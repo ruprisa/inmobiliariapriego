@@ -2,7 +2,10 @@
 
 {% block body -%}
     <div class="hero-unit">
-        <h3>EDICI&Oacute;N INMUEBLE REF. {{ edit_form.vars.value.ref }}</h3>
+        {% set inmueble %}
+            {{ edit_form.vars.value.ref }}
+        {% endset %}
+        <h3>{% trans from "inmuebles" %}inmu.sheet{% endtrans %}</h3>
     </div>
 
     {{ form_start(edit_form) }}

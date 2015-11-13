@@ -5,6 +5,7 @@ namespace InmobiliariaPriego\InmueblesBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\HttpFoundation\Response;
 
 class InmuebleType extends AbstractType
 {
@@ -15,7 +16,7 @@ class InmuebleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-                ->add("ref", "integer", array('label' => 'Referencia'))
+                ->add("ref", "integer", array('label' => 'Ref.'))
                 ->add("tipo", "text")
                 ->add("descripcion", "text",
                         array(

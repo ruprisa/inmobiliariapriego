@@ -28,7 +28,7 @@ class SecurityController extends Controller
             
             $session->remove(SecurityContext::AUTHENTICATION_ERROR);
         }
-        
+              
         return array(
             /*
              * Último usuario introducido por el usuario

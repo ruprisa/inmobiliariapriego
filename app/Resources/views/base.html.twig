@@ -15,19 +15,20 @@
                     <a class="brand" href="{{ path('inmobiliaria_priego_inmuebles_homepage') }}">Inmobiliaria Priego</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li id="inicio" class="active"><a href="{{ path('inmobiliaria_priego_inmuebles_homepage') }}">Inicio</a></li>
-                            <li><a href="#">Buscador</a></li>
-                            <li><a href="#">Contacto</a></li>
+                            <li id="inicio" class="active"><a href="{{ path('inmobiliaria_priego_inmuebles_homepage') }}">{% trans from "navigation" %}inicio{% endtrans %}</a></li>
                             {% if app.user %}
-                                <li><a href="{{ path('inmueble') }}">Inmuebles</a></li>
+                                <li><a href="{{ path('inmueble') }}">{% trans from "navigation" %}inmuebles{% endtrans %}</a></li>
                                 {% if is_granted('ROLE_ADMIN') %}
-                                    <li id="nuevousuario"><a href="{{ path('usuario') }}">Usuarios</a></li>
+                                    <li id="nuevousuario"><a href="{{ path('usuario') }}">{% trans from "navigation" %}users{% endtrans %}</a></li>
                                 {% endif %}
-                                <li><a href="{{ path('logout') }}">Logout</a></li>
-                                <li><a>Bienvenido {{ app.user.username }}</a></li>
+                                    <li><a href="{{ path('logout') }}">{% trans from "navigation" %}logout{% endtrans %}</a></li>
+                                {% set username %}
+                                    {{ app.user.username }}
+                                {% endset %}
+                                <li><a>{% trans from "navigation" %}bienvenido.%username%{% endtrans %}</a></li>
                             {% else %}
-                                <li><a href="{{ path('login') }}">Login</a></li>
-                                <li><a href="{{ path('usuario_new') }}">Registrarse</a></li>
+                                <li><a href="{{ path('login') }}">{% trans from "navigation" %}login{% endtrans %}</a></li>
+                                <li><a href="{{ path('usuario_new') }}">{% trans from "navigation" %}reg{% endtrans %}</a></li>
                             {% endif %}
                         </ul>
                     </div><!--/.nav-collapse -->

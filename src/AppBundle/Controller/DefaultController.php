@@ -14,8 +14,17 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', array(
+        /*return $this->render('default/index.html.twig', array(
             'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),
-        ));
+        ));*/
+        
+        /*
+         * Definir locale en la sesión
+         */
+        $this->get('session')->set('_locale', 'en_US');
+        
+        return $this->redirect($this->generateUrl('inmobiliaria_priego_inmuebles_homepage', 
+                array('_locale' => $request->getLocale()))
+        , 301);
     }
 }

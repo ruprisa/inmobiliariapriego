@@ -10,14 +10,14 @@
 {% endif %}
     
     <div class="hero-unit">
-        <h3>INICIAR SESI&Oacute;N</h3>
+        <h3>{% trans from "usuarios" %}login.title{% endtrans %}</h3>
     </div>
     
     <form action="{{ path('login_check') }}" method="post">
         <div class="row-fluid">
             <div class="span12">
                 <div class="control-group">
-                    <label class="control-label" for="username">Username:</label>
+                    <label class="control-label" for="username">{% trans from "usuarios" %}user.username{% endtrans %}</label>
                     <div class="controls">
                         <input type="text" id="username" name="_username" value="{{ last_username }}" />
                     </div>
@@ -28,7 +28,7 @@
         <div class="row-fluid">
             <div class="span12">
                 <div class="control-group">
-                    <label class="control-label" for="password">Password:</label>
+                    <label class="control-label" for="password">{% trans from "usuarios" %}user.password{% endtrans %}</label>
                     <div class="controls">
                         <input type="password" id="password" name="_password" />
                     </div>
@@ -40,7 +40,7 @@
             <div class="span12">
                 <div class="control-group">
                     <div class="controls">
-                        <button type="submit">login</button>
+                        <button type="submit">{% trans from "usuarios" %}login.submit{% endtrans %}</button>
                     </div>
                 </div>
             </div>

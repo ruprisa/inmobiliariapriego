@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+            <body>
+            <trans-unit id="1">
+                <source>bienvenido.%username%</source>
+                <target>Wellcome %username%</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>inicio</source>
+                <target>Home</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>inmuebles</source>
+                <target>Immovables</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>login</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>logout</source>
+                <target>Logout</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>reg</source>
+                <target>Check In</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>users</source>
+                <target>Users</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
