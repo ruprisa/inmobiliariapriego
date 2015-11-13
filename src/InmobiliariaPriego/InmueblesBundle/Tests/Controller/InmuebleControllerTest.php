@@ -6,6 +6,12 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class InmuebleControllerTest extends WebTestCase
 {
+    public function testIndex()
+    {
+        $client = static::createClient();
+        $crawler = $client->request('GET', '/es/inmueble/1/show');
+        $this->assertGreaterThan(0, $crawler->filter('div.hero-unit')->count());
+    }
     /*
     public function testCompleteScenario()
     {
