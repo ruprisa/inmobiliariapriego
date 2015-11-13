@@ -11,7 +11,7 @@
                 <target>Inmuebles</target>
             </trans-unit>
             <trans-unit id="3">
-                <source>inmu.sheet</source>
+                <source>inmu.sheet %inmudesc%</source>
                 <target>INMUEBLE REF. %inmudesc%</target>
             </trans-unit>
             <trans-unit id="4">
@@ -19,13 +19,105 @@
                 <target>Nuevo Inmueble</target>
             </trans-unit>
             <trans-unit id="5">
-                <source>Referencia</source>
+                <source>inmu.ref</source>
                 <target>Referencia</target>
             </trans-unit>
             <trans-unit id="6">
                 <source>inmu.tipo</source>
                 <target>Tipo</target>
             </trans-unit>            
+            <trans-unit id="7">
+                <source>inmu.zona</source>
+                <target>Area</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>inmu.calle</source>
+                <target>Calle</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>inmu.poblacion</source>
+                <target>Población</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>inmu.operacion</source>
+                <target>Operación</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>inmu.precio</source>
+                <target>Precio</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>inmu.superficie</source>
+                <target>Superficie</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>inmu.habdoble</source>
+                <target>Habitaciones Dobles</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>inmu.habsimple</source>
+                <target>Habitaciones Individuales</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>inmu.banyos</source>
+                <target>Baños</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>inmu.ascensor</source>
+                <target>Ascensor</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>inmu.terraza</source>
+                <target>Terraza</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>inmu.jardin</source>
+                <target>Jardín</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>inmu.parcking</source>
+                <target>Garaje</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>inmu.desc</source>
+                <target>Descripción del Inmueble</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>inmu.planta</source>
+                <target>Planta</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>inmu.provincia</source>
+                <target>Provincia</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>inmu.pais</source>
+                <target>País</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>inmu.metrosterraza</source>
+                <target>Metros Terraza</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>inmu.metrosjardin</source>
+                <target>Metros Jardín</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>inmu.trastero</source>
+                <target>Trastero</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>inmu.mtrastero</source>
+                <target>Metros Trastero</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>inmu.obranueva</source>
+                <target>Obra Nueva</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>inmu.dest.simple</source>
+                <target>Destacado</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

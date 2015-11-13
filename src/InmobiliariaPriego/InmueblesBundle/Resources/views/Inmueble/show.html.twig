@@ -14,31 +14,31 @@
     <li class="span6">
         <table>
             <tr>
-                <th>Referencia: </th>
+                <th>{% trans from "inmuebles" %}inmu.ref{% endtrans %}: </th>
                 <td>{{ entity.ref }}</td>
             </tr>
             <tr>
-                <th>Zona: </th>
+                <th>{% trans from "inmuebles" %}inmu.zona{% endtrans %}: </th>
                 <td>{{ entity.zona }}</td>
             </tr>
             <tr>
-                <th>Superficie: </th>
+                <th>{% trans from "inmuebles" %}inmu.superficie{% endtrans %}: </th>
                 <td>{{ entity.superficie ~ ' m2' }}</td>
             </tr>
             <tr>
-                <th>Habitaciones dobles: </th>
+                <th>{% trans from "inmuebles" %}inmu.habdoble{% endtrans %}: </th>
                 <td>{{ entity.habitacionesdobles }}</td>
             </tr>
             <tr>
-                <th>Habitaciones individuales: </th>
+                <th>{% trans from "inmuebles" %}inmu.habsimple{% endtrans %}: </th>
                 <td>{{ entity.habitacionessimples }}</td>
             </tr>
             <tr>
-                <th>Ba&ntilde;os: </th>
+                <th>{% trans from "inmuebles" %}inmu.banyos{% endtrans %}: </th>
                 <td>{{ entity.banyos }}</td>
             </tr>
             <tr>
-                <th>Ascensor: </th>
+                <th>{% trans from "inmuebles" %}inmu.ascensor{% endtrans %}: </th>
                 {% if entity.ascensor == true %}
                     <td>Si</td>
                 {% else %}
@@ -46,31 +46,31 @@
                 {% endif %}
             </tr>
             <tr>
-                <th>Terraza: </th>
+                <th>{% trans from "inmuebles" %}inmu.terraza{% endtrans %}: </th>
                 {% if entity.terraza == true %}
-                    <td>Si - {{ entity.metrosterraza }} m2</td>
+                <td>{% trans %}si{% endtrans %} - {{ entity.metrosterraza }} m2</td>
                 {% else %}
-                    <td>No  </td>
+                    <td>{% trans %}no{% endtrans %}  </td>
                 {% endif %}
             </tr>
             <tr>
-                <th>Jardín: </th>
+                <th>{% trans from "inmuebles" %}inmu.jardin{% endtrans %}: </th>
                 {% if entity.jardin == true %}
-                    <td>Si - {{ entity.metrosjardin }} m2</td>
+                    <td>{% trans %}si{% endtrans %} - {{ entity.metrosjardin }} m2</td>
                 {% else %}
-                    <td>No  </td>
+                    <td>{% trans %}no{% endtrans %}  </td>
                 {% endif %}
             </tr>
             <tr>
-                <th>Parking: </th>
+                <th>{% trans from "inmuebles" %}inmu.parcking{% endtrans %}: </th>
                 {% if entity.garaje == true %}
-                    <td>Si</td>
+                    <td>{% trans %}si{% endtrans %}</td>
                 {% else %}
-                    <td>No</td>
+                    <td>{% trans %}no{% endtrans %}</td>
                 {% endif %}
             </tr>
             <tr>
-                <th>Precio: </th>
+                <th>{% trans from "inmuebles" %}inmu.precio{% endtrans %}: </th>
                 <td>{{ entity.precio ~ ' €' }}</td>
             </tr>
         </table>
@@ -79,7 +79,7 @@
 
 <div class="row-fluid">
     <br />
-    <strong>Descripci&oacute;n del Inmueble</strong><br />
+    <strong>{% trans from "inmuebles" %}inmu.desc{% endtrans %}</strong><br />
     <p>
         {{ entity.descripcion }}
     </p>
@@ -88,13 +88,13 @@
 <div class="row-fluid">
     <div class="well span12 row">
         <div class="span8">
-            <a href="{{ path('inmueble') }}" class="btn btn-info btn-small" role="button">Volver a la lista</a>
+            <a href="{{ path('inmueble') }}" class="btn btn-info btn-small" role="button">{% trans %}back.list{% endtrans %}</a>
         </div>
         <div class="span2">
             {{ form_end(delete_form) }}
         </div>
         <div class="span2">
-            <a href="{{ path('inmueble_edit', { 'id': entity.ref }) }}" class="btn btn-info btn-small" role="button">Editar</a>
+            <a href="{{ path('inmueble_edit', { 'id': entity.ref }) }}" class="btn btn-info btn-small" role="button">{% trans %}editar{% endtrans %}</a>
         </div>
     </div>
 </div>

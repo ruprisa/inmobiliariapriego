@@ -84,7 +84,7 @@ class UsuarioController extends Controller
         ));
         
         $form->add('submit', 'submit', array(
-            'label' => 'Crear Usuario',
+            'label' => 'crear',
             'attr' => array('class' => 'btn btn-info btn-small')
             ));
 
@@ -167,7 +167,7 @@ class UsuarioController extends Controller
         ));
         
         $form->add('submit', 'submit', array(
-            'label' => 'Actualizar',
+            'label' => 'guardar',
             'attr' => array('class' => 'btn btn-info btn-small')
             ));
 
@@ -249,7 +249,7 @@ class UsuarioController extends Controller
             ->setAction($this->generateUrl('usuario_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array(
-                'label' => 'Eliminar',
+                'label' => 'eliminar',
                 'attr' => array('class' => 'btn btn-info btn-small')
                 ))
             ->getForm()

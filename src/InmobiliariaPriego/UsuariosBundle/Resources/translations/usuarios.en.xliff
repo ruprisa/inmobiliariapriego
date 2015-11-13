@@ -7,24 +7,40 @@
                 <target>LOGIN</target>
             </trans-unit>
             <trans-unit id="2">
-                <source>user.username</source>
-                <target>Username</target>
+                <source>username</source>
+                <target>User Name</target>
             </trans-unit>
             <trans-unit id="3">
-                <source>user.password</source>
+                <source>password</source>
                 <target>Password</target>
             </trans-unit>
             <trans-unit id="4">
                 <source>login.submit</source>
                 <target>Login</target>
-            </trans-unit>
+            </trans-unit>           
             <trans-unit id="5">
-                <source>inmu.ref</source>
-                <target>Reference</target>
+                <source>activo</source>
+                <target>Active</target>
             </trans-unit>
             <trans-unit id="6">
-                <source>inmu.tipo</source>
-                <target>Type</target>
+                <source>userid</source>
+                <target>User Id</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>title</source>
+                <target>USERS</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>roles</source>
+                <target>Roles</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>nuevo</source>
+                <target>NEW USER</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>titulo.editar %editarusuario%</source>
+                <target>Edit User %editarusuario%</target>
             </trans-unit>
         </body>
     </file>

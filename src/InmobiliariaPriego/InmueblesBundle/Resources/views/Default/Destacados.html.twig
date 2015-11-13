@@ -19,15 +19,15 @@
                     <h3>{{ destacado.poblacion }} - {{ destacado.tipo ~ ' en ' }} {{ destacado.operacion }}</h3>
                     <table>
                         <tr>
-                            <td>Zona: </td>
+                            <td>{% trans from "inmuebles"%}inmu.zona{% endtrans %}: </td>
                             <td>{{ destacado.zona }}</td>
                         </tr>
                         <tr>
-                            <td>Superficie: </td>
+                            <td>{% trans from "inmuebles"%}inmu.superficie{% endtrans %}: </td>
                             <td>{{ destacado.superficie ~ ' m2' }}</td>
                         </tr>
                         <tr>
-                            <td>Precio: </td>
+                            <td>{% trans from "inmuebles"%}inmu.precio{% endtrans %}: </td>
                             <td>{{ destacado.precio ~ ' €' }}</td>
                         </tr>
                     </table>

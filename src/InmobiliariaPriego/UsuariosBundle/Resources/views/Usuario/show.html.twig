@@ -10,11 +10,11 @@
         <table class="table table-hover">
         <tbody>
             <tr>
-                <th>Userid</th>
+                <th>{% trans from "usuarios" %}userid{% endtrans %}</th>
                 <td>{{ entity.userid }}</td>
             </tr>
             <tr>
-                <th>Username</th>
+                <th>{% trans from "usuarios" %}username{% endtrans %}</th>
                 <td>{{ entity.username }}</td>
             </tr>
             <tr>
@@ -22,7 +22,7 @@
                 <td>{{ entity.salt }}</td>
             </tr>
             <tr>
-                <th>Roles</th>
+                <th>{% trans from "usuarios" %}roles{% endtrans %}</th>
                 <td>{{ entity.roles|join(' ') }}</td>
             </tr>
         </tbody>
@@ -33,13 +33,13 @@
 <div class="row-fluid">
     <div class="well span12 row">
         <div class="span8">
-            <a href="{{ path('usuario') }}" class="btn btn-info btn-small" role="button">Volver a la lista</a>
+            <a href="{{ path('usuario') }}" class="btn btn-info btn-small" role="button">{% trans %}back.list{% endtrans %}</a>
         </div>
         <div class="span2">
             {{ form(delete_form) }}
         </div>
         <div class="span2">
-            <a href="{{ path('usuario_edit', { 'id': entity.userid }) }}" class="btn btn-info btn-small" role="button">Editar</a>
+            <a href="{{ path('usuario_edit', { 'id': entity.userid }) }}" class="btn btn-info btn-small" role="button">{% trans %}editar{% endtrans %}</a>
         </div>
     </div>
 </div>

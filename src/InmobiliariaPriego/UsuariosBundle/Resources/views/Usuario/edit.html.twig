@@ -2,7 +2,10 @@
 
 {% block body -%}
     <div class="hero-unit">
-        <h3>Editar Usuario {{ edit_form.vars.value.username }}</h3>
+        {% set editarusuario %}
+            {{ edit_form.vars.value.username }}
+        {% endset %}
+        <h3>{% trans from "usuarios" %}titulo.editar %editarusuario%{% endtrans %}</h3>
     </div>
 
     {{ form_start(edit_form) }}
@@ -26,13 +29,13 @@
     <div class="row-fluid">
         <div class="well span12 row">
             <div class="span8">
-                <a href="{{ path('usuario') }}" class="btn btn-info btn-small" role="button">Volver a la lista</a>
+                <a href="{{ path('usuario') }}" class="btn btn-info btn-small" role="button">{% trans %}back.list{% endtrans %}</a>
             </div>
             <div class="span2">
                 <!-- Si utilizo el formulario de eliminación se proeuce el error 405 Method Not Allowed -->
                 {# form(delete_form) #}
                 <!-- De esta forma también se queja de GET -->
-                <a href="{{ path('usuario_delete', { 'id': edit_form.vars.value.userid }) }}" class="btn btn-info btn-small" role="button">Eliminar</a>
+                <a href="{{ path('usuario_delete', { 'id': edit_form.vars.value.userid }) }}" class="btn btn-info btn-small" role="button">{% trans %}eliminar{% endtrans %}</a>
             </div>
             <div class="span2">
                 {{ form_row(edit_form.submit) }}

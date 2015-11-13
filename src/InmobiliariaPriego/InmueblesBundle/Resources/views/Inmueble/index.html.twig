@@ -11,14 +11,14 @@
         <thead>
             <tr>
                 <th>Img</th>
-                <th>Ref</th>
-                <th>Tipo</th>
-                <th>Zona</th>
-                <th>Calle</th>
-                <th>Poblacion</th>
-                <th>Operacion</th>
-                <th>Precio</th>
-                <th><a href="{{ path('inmueble_new') }}" class="btn btn-info btn-small" role="button">Nuevo</a></th>
+                <th>{% trans from "inmuebles" %}inmu.ref{% endtrans %}</th>
+                <th>{% trans from "inmuebles" %}inmu.tipo{% endtrans %}</th>
+                <th>{% trans from "inmuebles" %}inmu.zona{% endtrans %}</th>
+                <th>{% trans from "inmuebles" %}inmu.calle{% endtrans %}</th>
+                <th>{% trans from "inmuebles" %}inmu.poblacion{% endtrans %}</th>
+                <th>{% trans from "inmuebles" %}inmu.operacion{% endtrans %}</th>
+                <th>{% trans from "inmuebles" %}inmu.precio{% endtrans %}</th>
+                <th><a href="{{ path('inmueble_new') }}" class="btn btn-info btn-small" role="button">{% trans %}nuevo{% endtrans %}</a></th>
             </tr>
         </thead>
         <tbody>
@@ -35,8 +35,8 @@
                 <td>{{ entity.operacion }}</td>
                 <td>{{ entity.precio }}</td>
                 <td>
-                    <a href="{{ path('inmueble_show', { 'id': entity.ref }) }}" class="btn btn-info btn-small" role="button">Ver</a>
-                    <a href="{{ path('inmueble_edit', { 'id': entity.ref }) }}" class="btn btn-info btn-small" role="button">Editar</a>
+                    <a href="{{ path('inmueble_show', { 'id': entity.ref }) }}" class="btn btn-info btn-small" role="button">{% trans %}ver{% endtrans %}</a>
+                    <a href="{{ path('inmueble_edit', { 'id': entity.ref }) }}" class="btn btn-info btn-small" role="button">{% trans %}editar{% endtrans %}</a>
                 </td>
             </tr>
         {% endfor %}

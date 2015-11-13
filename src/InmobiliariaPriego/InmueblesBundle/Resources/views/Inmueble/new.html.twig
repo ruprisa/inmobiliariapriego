@@ -2,7 +2,7 @@
 
 {% block body -%}
     <div class="hero-unit">
-        <h3>{% trans from "navigation" %}inmu.new{% endtrans %}</h3>
+        <h3>{% trans from "inmuebles" %}inmu.new{% endtrans %}</h3>
     </div>
 
     {{ form_start(form) }}
@@ -112,7 +112,7 @@
     <div class="row-fluid">
         <div class="well span12 row">
             <div class="span8">
-                <a href="{{ path('inmueble') }}" class="btn btn-info btn-small" role="button">Volver a la lista</a>
+                <a href="{{ path('inmueble') }}" class="btn btn-info btn-small" role="button">{% trans %}back.list{% endtrans %}</a>
             </div>
             <div class="span2">
                 

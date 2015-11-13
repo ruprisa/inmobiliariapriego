@@ -7,11 +7,11 @@
                 <target>INICIAR SESION</target>
             </trans-unit>
             <trans-unit id="2">
-                <source>user.username</source>
-                <target>Usuario</target>
+                <source>username</source>
+                <target>Nombre Usuario</target>
             </trans-unit>
             <trans-unit id="3">
-                <source>user.password</source>
+                <source>password</source>
                 <target>Constrseña</target>
             </trans-unit>
             <trans-unit id="4">
@@ -19,13 +19,29 @@
                 <target>Acceder</target>
             </trans-unit>
             <trans-unit id="5">
-                <source>inmu.ref</source>
-                <target>Referencia</target>
+                <source>activo</source>
+                <target>Activo</target>
             </trans-unit>
             <trans-unit id="6">
-                <source>inmu.tipo</source>
-                <target>Tipo</target>
-            </trans-unit>            
+                <source>userid</source>
+                <target>Id Usuario</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>title</source>
+                <target>USUARIOS</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>roles</source>
+                <target>Roles</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>nuevo</source>
+                <target>NUEVO USUARIO</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>titulo.editar %editarusuario%</source>
+                <target>Editar Usuario %editarusuario%</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

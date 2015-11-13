@@ -15,10 +15,10 @@ class UsuarioType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('userid','text',array('label' => 'Id Usuario'))
-            ->add('password','text',array('label' => 'Contraseña'))
-            ->add('username','text',array('label' => 'Nombre'))
-            ->add('active', 'checkbox', array('label' => 'Activo', 'data' => true, 'required' => false))
+            ->add('userid','text',array('label' => 'userid', 'translation_domain' => 'usuarios'))
+            ->add('password','text',array('label' => 'password', 'translation_domain' => 'usuarios'))
+            ->add('username','text',array('label' => 'username', 'translation_domain' => 'usuarios'))
+            ->add('active', 'checkbox', array('label' => 'activo', 'translation_domain' => 'usuarios', 'data' => true, 'required' => false))
             ;
     }
     

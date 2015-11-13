@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+            <body>
+            <trans-unit id="1">
+                <source>si</source>
+                <target>Yes</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>no</source>
+                <target>No</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>contacto</source>
+                <target>Contact</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>back.list</source>
+                <target>Back to the list</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>desc</source>
+                <target>Description</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>crear</source>
+                <target>Create</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>nuevo</source>
+                <target>New</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>ver</source>
+                <target>Show</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>editar</source>
+                <target>Edit</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>eliminar</source>
+                <target>Delete</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>guardar</source>
+                <target>Save</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
